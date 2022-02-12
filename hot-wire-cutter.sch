@@ -1,0 +1,149 @@
+EESchema Schematic File Version 4
+EELAYER 29 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "Hot Wire Cutter Wiring"
+Date "2019-07-13"
+Rev "1.0"
+Comp "Pimpernel Labs"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L device:R RL1
+U 1 1 5D2A7EB0
+P 7450 5450
+F 0 "RL1" H 7520 5496 50  0000 L CNN
+F 1 "2.67" H 7520 5405 50  0000 L CNN
+F 2 "" V 7380 5450 50  0001 C CNN
+F 3 "" H 7450 5450 50  0001 C CNN
+	1    7450 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:R R1
+U 1 1 5D2A840B
+P 3950 2650
+F 0 "R1" H 4020 2696 50  0000 L CNN
+F 1 "1k" H 4020 2605 50  0000 L CNN
+F 2 "" V 3880 2650 50  0001 C CNN
+F 3 "" H 3950 2650 50  0001 C CNN
+	1    3950 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:POT RV1
+U 1 1 5D2A9315
+P 3950 3550
+F 0 "RV1" H 3880 3596 50  0000 R CNN
+F 1 "4.7k" H 3880 3505 50  0000 R CNN
+F 2 "Wire_Connections_Bridges:WireConnection_2.50mmDrill" H 3950 3550 50  0001 C CNN
+F 3 "" H 3950 3550 50  0001 C CNN
+	1    3950 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND0101
+U 1 1 5D2AA39F
+P 3950 4700
+F 0 "#GND0101" H 3950 4600 50  0001 C CNN
+F 1 "0" H 3950 4789 50  0000 C CNN
+F 2 "" H 3950 4700 50  0001 C CNN
+F 3 "" H 3950 4700 50  0001 C CNN
+	1    3950 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND0102
+U 1 1 5D2AA77C
+P 7450 5950
+F 0 "#GND0102" H 7450 5850 50  0001 C CNN
+F 1 "0" H 7450 6039 50  0000 C CNN
+F 2 "" H 7450 5950 50  0001 C CNN
+F 3 "" H 7450 5950 50  0001 C CNN
+	1    7450 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR0101
+U 1 1 5D2AACD0
+P 3950 2050
+F 0 "#PWR0101" H 3950 1900 50  0001 C CNN
+F 1 "+12V" H 3965 2223 50  0000 C CNN
+F 2 "" H 3950 2050 50  0001 C CNN
+F 3 "" H 3950 2050 50  0001 C CNN
+	1    3950 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR0102
+U 1 1 5D2AB8A3
+P 7450 2850
+F 0 "#PWR0102" H 7450 2700 50  0001 C CNN
+F 1 "+12V" H 7465 3023 50  0000 C CNN
+F 2 "" H 7450 2850 50  0001 C CNN
+F 3 "" H 7450 2850 50  0001 C CNN
+	1    7450 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND0103
+U 1 1 5D2AC225
+P 2700 4650
+F 0 "#GND0103" H 2700 4550 50  0001 C CNN
+F 1 "0" H 2700 4739 50  0000 C CNN
+F 2 "" H 2700 4650 50  0001 C CNN
+F 3 "" H 2700 4650 50  0001 C CNN
+	1    2700 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L conn:Audio-Jack-2 J1
+U 1 1 5D2ACA36
+P 2500 3450
+F 0 "J1" H 2508 3675 50  0000 C CNN
+F 1 "Audio-Jack-2" H 2508 3584 50  0000 C CNN
+F 2 "" H 2750 3450 50  0001 C CNN
+F 3 "~" H 2750 3450 50  0001 C CNN
+	1    2500 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L transistors:2N3055 Q1
+U 1 1 5D2ADC26
+P 7350 3550
+F 0 "Q1" H 7540 3596 50  0000 L CNN
+F 1 "2N3055" H 7540 3505 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-3" H 7550 3475 50  0001 L CIN
+F 3 "http://www.onsemi.com/pub_link/Collateral/2N3055-D.PDF" H 7350 3550 50  0001 L CNN
+	1    7350 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 2850 7450 3350
+Wire Wire Line
+	7450 5600 7450 5950
+Wire Wire Line
+	4100 3550 7150 3550
+Wire Wire Line
+	3950 2050 3950 2500
+Wire Wire Line
+	3950 2800 3950 3100
+Wire Wire Line
+	3950 3700 3950 4700
+Wire Wire Line
+	3950 3100 2700 3100
+Wire Wire Line
+	2700 3100 2700 3450
+Connection ~ 3950 3100
+Wire Wire Line
+	3950 3100 3950 3400
+Wire Wire Line
+	2700 3550 2700 4650
+Wire Wire Line
+	7450 3750 7450 5300
+$EndSCHEMATC

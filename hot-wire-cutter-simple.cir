@@ -1,0 +1,41 @@
+.title Simple Current controller for Hot-wire cutter
+
+* Include all the models I'll be using
+.include ~/share/ngspice/models/POT.SP3
+.include ~/share/ngspice/models/2N3055.SP3
+.include ~/share/ngspice/models/1N4001.SP3
+.include ~/share/ngspice/models/6A1.SP3
+
+* Some parameters for control
+.param r1_val=0
+.param re_val=0
+.param rl_val=2.67
+.param r2_val=0
+.param rx_val=4.7k
+.param rb_val=0
+
+* Main power supply
+Vpwr v12 0 DC 12V
+
+* Control voltage
+Vctrl vx 0 DC 6V
+
+* Transistor and support legs
+Q1 v12 vbase vemit 2n3055
+Remit vemit vload_pre {re_val}
+Rbase vx vbase_pre {rb_val}
+* OR:
+* Dbase vx vbase_pre 1n4001rl
+* Dbase vx vbase_pre DI_6A1
+
+
+* Actual load
+Rload vload 0 {rl_val}
+
+
+* Dummy voltage sources for current measurement
+Vdummy_load vload_pre vload 0
+Vdummy_base vbase_pre vbase 0
+*Vdummy_div v12 vdiv 0 
+
+.end
